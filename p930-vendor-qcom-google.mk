@@ -13,4 +13,3 @@ PRODUCT_COPY_FILES += \
     vendor/lge/p930/proprietary/qcom/google/system/lib/libc2d2_z180.so:system/lib/libc2d2_z180.so \
     vendor/lge/p930/proprietary/qcom/google/system/etc/firmware/leia_pfp_470.fw:system/etc/firmware/leia_pfp_470.fw \
     vendor/lge/p930/proprietary/qcom/google/system/etc/firmware/leia_pm4_470.fw:system/etc/firmware/leia_pm4_470.fw \
-    vendor/lge/p930/proprietary/qcom/google/system/etc/firmware/vidc_1080p.fw:system/etc/firmware/vidc_1080p.fw \

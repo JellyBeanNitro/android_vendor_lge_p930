@@ -18,10 +18,11 @@
 PRODUCT_COPY_FILES := \
     vendor/lge/p930/proprietary/lib/liboncrpc.so:obj/lib/liboncrpc.so \
     vendor/lge/p930/proprietary/lib/libnv.so:obj/lib/libnv.so \
+    vendor/lge/p930/proprietary/lib/libv8.so:obj/lib/libv8.so \
+    vendor/lge/p930/proprietary/lib/libDivxDrm.so:obj/lib/libDivxDrm.so \
     vendor/lge/p930/proprietary/lib/libaudioalsa.so:obj/lib/libaudioalsa.so \
     vendor/lge/p930/proprietary/lib/libacdbloader.so:obj/lib/libacdbloader.so \
     vendor/lge/p930/proprietary/lib/libacdbmapper.so:obj/lib/libacdbmapper.so \
-    vendor/lge/p930/proprietary/lib/libv8.so:obj/lib/libv8.so \
 
 ## Flash
 PRODUCT_COPY_FILES += \
@@ -31,13 +32,15 @@ PRODUCT_COPY_FILES += \
     vendor/lge/p930/proprietary/lib/plugins/com.adobe.flashplayer/libstagefright_froyo.so:system/lib/plugins/com.adobe.flashplayer/libstagefright_froyo.so \
     vendor/lge/p930/proprietary/lib/plugins/com.adobe.flashplayer/libstagefright_honeycomb.so:system/lib/plugins/com.adobe.flashplayer/libstagefright_honeycomb.so \
 
-## Camera
+## LG Apps
 PRODUCT_COPY_FILES += \
     vendor/lge/p930/proprietary/app/Camera_LG.apk:system/app/Camera_LG.apk \
     vendor/lge/p930/proprietary/app/lge-res.apk:system/framework/lge-res.apk \
+    vendor/lge/p930/proprietary/app/FileShare.apk:system/app/FileShare.apk \
+    vendor/lge/p930/proprietary/app/SmartShare.apk:system/app/SmartShare.apk \
+    vendor/lge/p930/proprietary/lib/liblgdrm_jni.so:system/lib/liblgdrm_jni.so \
+    vendor/lge/p930/proprietary/lib/liblgupnp.so:system/lib/liblgupnp.so \
     vendor/lge/p930/proprietary/lib/libkwr_mvoice-jni.so:system/lib/libkwr_mvoice-jni.so \
-    vendor/lge/p930/proprietary/lib/libmorpho_movie_stabilization.so:system/lib/libmorpho_movie_stabilization.so \
-    vendor/lge/p930/proprietary/lib/libmorpho_noise_reduction.so:system/lib/libmorpho_noise_reduction.so \
     vendor/lge/p930/proprietary/lib/libOlaLGECameraJNI.so:system/lib/libOlaLGECameraJNI.so \
     vendor/lge/p930/proprietary/app/LG_Home3.apk:system/app/LG_Home3.apk \
     vendor/lge/p930/proprietary/app/WeatherMultiCP.apk:system/app/WeatherMultiCP.apk \
@@ -45,14 +48,16 @@ PRODUCT_COPY_FILES += \
 
 ## BT FW
 PRODUCT_COPY_FILES += \
-    vendor/lge/p930/proprietary/bin/btld:system/bin/btld \
-    vendor/lge/p930/proprietary/etc/firmware/BCM4330B1_002.001.003.0243.0308.hcd:system/etc/firmware/BCM4330B1_002.001.003.0243.0308.hcd \
+    vendor/lge/p930/proprietary/etc/firmware/BCM4330B14.hcd:system/etc/firmware/BCM4330B14.hcd \
+#    vendor/lge/p930/proprietary/bin/btld:system/bin/btld \
+#    vendor/lge/p930/proprietary/etc/firmware/BCM4330B1_002.001.003.0243.0308.hcd:system/etc/firmware/BCM4330B1_002.001.003.0243.0308.hcd \
 
 ## WiFi FW
 PRODUCT_COPY_FILES += \
     vendor/lge/p930/proprietary/etc/firmware/fw_bcmdhd_apsta.bin:system/etc/firmware/fw_bcmdhd_apsta.bin \
     vendor/lge/p930/proprietary/etc/firmware/fw_bcmdhd.bin:system/etc/firmware/fw_bcmdhd.bin \
     vendor/lge/p930/proprietary/etc/firmware/fw_bcmdhd_p2p.bin:system/etc/firmware/fw_bcmdhd_p2p.bin \
+    vendor/lge/p930/proprietary/etc/firmware/vidc_1080p.fw:system/etc/firmware/vidc_1080p.fw \
 
 ## RIL, modem, Q6
 PRODUCT_COPY_FILES += \
@@ -60,10 +65,10 @@ PRODUCT_COPY_FILES += \
     vendor/lge/p930/proprietary/bin/qmuxd:system/bin/qmuxd \
     vendor/lge/p930/proprietary/bin/qmiproxy:system/bin/qmiproxy \
     vendor/lge/p930/proprietary/bin/netmgrd:system/bin/netmgrd \
-    vendor/lge/p930/proprietary/bin/qrngd:system/bin/qrngd \
     vendor/lge/p930/proprietary/bin/rild:system/bin/rild \
     vendor/lge/p930/proprietary/bin/qcks:system/bin/qcks \
     vendor/lge/p930/proprietary/bin/ks:system/bin/ks \
+    vendor/lge/p930/proprietary/bin/qrngd:system/bin/qrngd \
     vendor/lge/p930/proprietary/bin/time_daemon:system/bin/time_daemon \
     vendor/lge/p930/proprietary/lib/libril-qc-qmi-1.so:system/lib/libril-qc-qmi-1.so \
     vendor/lge/p930/proprietary/lib/libril-qcril-hook-oem.so:system/lib/libril-qcril-hook-oem.so \
@@ -86,6 +91,7 @@ PRODUCT_COPY_FILES += \
 
 ## CPU management
 PRODUCT_COPY_FILES += \
+    vendor/lge/p930/proprietary/bin/qosmgr:system/bin/qosmgr \
     vendor/lge/p930/proprietary/bin/thermald:system/bin/thermald \
     vendor/lge/p930/proprietary/bin/mpdecision:system/bin/mpdecision \
     vendor/lge/p930/proprietary/lib/libthermal_mitigation_fusion.so:system/lib/libthermal_mitigation_fusion.so \
@@ -101,18 +107,35 @@ PRODUCT_COPY_FILES += \
 
 ## Camera
 PRODUCT_COPY_FILES += \
+    vendor/lge/p930/proprietary/lib/libimage-jpeg-dec-omx-comp.so:system/lib/libimage-jpeg-dec-omx-comp.so \
+    vendor/lge/p930/proprietary/lib/libimage-jpeg-enc-omx-comp.so:system/lib/libimage-jpeg-enc-omx-comp.so \
+    vendor/lge/p930/proprietary/lib/libimage-omx-common.so:system/lib/libimage-omx-common.so \
+    vendor/lge/p930/proprietary/lib/libmmcamera_faceproc.so:system/lib/libmmcamera_faceproc.so \
+    vendor/lge/p930/proprietary/lib/libmmcamera_frameproc.so:system/lib/libmmcamera_frameproc.so \
+    vendor/lge/p930/proprietary/lib/libmmcamera_hdr_lib.so:system/lib/libmmcamera_hdr_lib.so \
+    vendor/lge/p930/proprietary/lib/libmmcamera_image_stab.so:system/lib/libmmcamera_image_stab.so \
+    vendor/lge/p930/proprietary/lib/libmmcamera_interface2.so:system/lib/libmmcamera_interface2.so \
+    vendor/lge/p930/proprietary/lib/libmmcamera_statsproc31.so:system/lib/libmmcamera_statsproc31.so \
+    vendor/lge/p930/proprietary/lib/libmmcamera_wavelet_lib.so:system/lib/libmmcamera_wavelet_lib.so \
     vendor/lge/p930/proprietary/lib/libmmjps.so:system/lib/libmmjps.so \
     vendor/lge/p930/proprietary/lib/libmmjpeg.so:system/lib/libmmjpeg.so \
     vendor/lge/p930/proprietary/lib/libmmipl.so:system/lib/libmmipl.so \
     vendor/lge/p930/proprietary/lib/libmmmpo.so:system/lib/libmmmpo.so \
     vendor/lge/p930/proprietary/lib/libmmmpod.so:system/lib/libmmmpod.so \
     vendor/lge/p930/proprietary/lib/libmmstereo.so:system/lib/libmmstereo.so \
+    vendor/lge/p930/proprietary/lib/libmmstillomx.so:system/lib/libmmstillomx.so \
     vendor/lge/p930/proprietary/lib/liboemcamera.so:system/lib/liboemcamera.so \
-    vendor/lge/p930/proprietary/lib/lib_LG_fastaf_v2.0.so:system/lib/lib_LG_fastaf_v2.0.so \
     vendor/lge/p930/proprietary/lib/libOlaFaceDetector.so:system/lib/libOlaFaceDetector.so \
     vendor/lge/p930/proprietary/lib/libgemini.so:system/lib/libgemini.so \
-    vendor/lge/p930/proprietary/lib/libchromatix_imx105_preview.so:system/lib/libchromatix_imx105_preview.so \
+    vendor/lge/p930/proprietary/lib/libcamera_client.so:system/lib/libcamera_client.so \
+    vendor/lge/p930/proprietary/lib/libcameraservice.so:system/lib/libcameraservice.so \
     vendor/lge/p930/proprietary/lib/hw/camera.msm8660.so:system/lib/hw/camera.msm8660.so \
+    vendor/lge/p930/proprietary/bin/v4l2-qcamera-app:system/bin/v4l2-qcamera-app \
+    vendor/lge/p930/proprietary/bin/mm-qcamera-daemon:system/bin/mm-qcamera-daemon \
+
+# libchromatix proprietary libs
+PRODUCT_COPY_FILES += $(shell find vendor/lge/p930/proprietary/lib/libchromatix -name '*.so' \
+	-printf '%p:system/lib/%f ')
 
 ## Sensors
 PRODUCT_COPY_FILES += \
@@ -121,18 +144,18 @@ PRODUCT_COPY_FILES += \
 
 ## OMX
 PRODUCT_COPY_FILES += \
-    vendor/lge/p930/proprietary/lib/libaudioparsers.so:system/lib/libaudioparsers.so \
     vendor/lge/p930/proprietary/lib/libDivxDrm.so:system/lib/libDivxDrm.so \
     vendor/lge/p930/proprietary/lib/libSHIMDivxDrm.so:system/lib/libSHIMDivxDrm.so \
-    vendor/lge/p930/proprietary/lib/libOmxAacDec.so:system/lib/libOmxAacDec.so \
-    vendor/lge/p930/proprietary/lib/libOmxWmaDec.so:system/lib/libOmxWmaDec.so \
+    vendor/lge/p930/proprietary/lib/libaudioparsers.so:system/lib/libaudioparsers.so \
     vendor/lge/p930/proprietary/lib/libOmxQcelp13Dec.so:system/lib/libOmxQcelp13Dec.so \
     vendor/lge/p930/proprietary/lib/libOmxEvrcDec.so:system/lib/libOmxEvrcDec.so \
+    vendor/lge/p930/proprietary/lib/libOmxAacDec.so:system/lib/libOmxAacDec.so \
+    vendor/lge/p930/proprietary/lib/libOmxWmaDec.so:system/lib/libOmxWmaDec.so \
     vendor/lge/p930/proprietary/lib/libWVphoneAPI.so:system/lib/libWVphoneAPI.so \
-    vendor/lge/p930/proprietary/vendor/lib/libWVStreamControlAPI_L3.so:system/vendor/lib/libWVStreamControlAPI_L3.so \
     vendor/lge/p930/proprietary/vendor/lib/libwvm.so:system/vendor/lib/libwvm.so \
     vendor/lge/p930/proprietary/vendor/lib/libwvdrm_L3.so:system/vendor/lib/libwvdrm_L3.so \
     vendor/lge/p930/proprietary/vendor/lib/drm/libdrmwvmplugin.so:system/vendor/lib/drm/libdrmwvmplugin.so \
+    vendor/lge/p930/proprietary/vendor/lib/libWVStreamControlAPI_L3.so:system/vendor/lib/libWVStreamControlAPI_L3.so \
     vendor/lge/p930/proprietary/lib/libmmosal.so:system/lib/libmmosal.so \
     vendor/lge/p930/proprietary/lib/libmmparser.so:system/lib/libmmparser.so \
 
@@ -142,8 +165,21 @@ PRODUCT_COPY_FILES += \
     vendor/lge/p930/proprietary/lib/libmm-abl.so:system/lib/libmm-abl.so \
     vendor/lge/p930/proprietary/lib/libmm-abl-oem.so:system/lib/libmm-abl-oem.so \
     vendor/lge/p930/proprietary/lib/libmm-color-convertor.so:system/lib/libmm-color-convertor.so \
-    vendor/lge/p930/proprietary/bin/hdmid:system/bin/hdmid \
-    vendor/lge/p930/proprietary/hdmisuspend.bmp:system/hdmisuspend.bmp \
+    vendor/lge/p930/proprietary/bin/mm-pp-daemon:system/bin/mm-pp-daemon \
+
+## Stock Display
+PRODUCT_COPY_FILES += \
+    vendor/lge/p930/proprietary/lge/libgenlock.so:system/lib/libgenlock.so \
+    vendor/lge/p930/proprietary/lge/libhwcexternal.so:system/lib/libhwcexternal.so \
+    vendor/lge/p930/proprietary/lge/libhwcservice.so:system/lib/libhwcservice.so \
+    vendor/lge/p930/proprietary/lge/libmemalloc.so:system/lib/libmemalloc.so \
+    vendor/lge/p930/proprietary/lge/liboverlay.so:system/lib/liboverlay.so \
+    vendor/lge/p930/proprietary/lge/libqdMetaData.so:system/lib/libqdMetaData.so \
+    vendor/lge/p930/proprietary/lge/libqdutils.so:system/lib/libqdutils.so \
+    vendor/lge/p930/proprietary/lge/libtilerenderer.so:system/lib/libtilerenderer.so \
+    vendor/lge/p930/proprietary/lge/hw/copybit.msm8660.so:system/lib/hw/copybit.msm8660.so \
+    vendor/lge/p930/proprietary/lge/hw/gralloc.msm8660.so:system/lib/hw/gralloc.msm8660.so \
+    vendor/lge/p930/proprietary/lge/hw/hwcomposer.msm8660.so:system/lib/hw/hwcomposer.msm8660.so \
 
 # use all present proprietary apk
 PRODUCT_COPY_FILES += $(shell find vendor/lge/p930/proprietary/gapps -name '*.apk' \
